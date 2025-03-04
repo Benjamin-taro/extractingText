@@ -45,7 +45,7 @@ def extract_text_from_local_pdf(file_path):
         return text
     except Exception as e:
         print('Error: ', e)
-        return 
+        return ""
 
 def get_unique_filename(base_filename):
     if not os.path.exists(base_filename):
@@ -83,18 +83,19 @@ def get_pdf_title_from_local_pdf(file_path):
         return ""
     
 def get_output_filename(source):
+    timestamp = datetime.datetime.now().strftime("%d%m%Y_%H%M%S")
+    
     if source.startswith("http") and source.lower().endswith("pdf"):
         title = get_pdf_title_from_pdf_link(source)
         if title:
-            filename = f"{title}.txt"
+            filename = f"{title}_{timestamp}.txt"
             return get_unique_filename(filename)
     elif not source.startswith("http"):
         title = get_pdf_title_from_local_pdf(source)
         if title:
-            filename = f"{title}.txt"
+            filename = f"{title}_{timestamp}.txt"
             return get_unique_filename(filename)
-    date_str = datetime.datetime.now().strftime("%d%m%Y")
-    filename = f"output_{date_str}.txt"
+    filename = f"output_{timestamp}.txt"
     return get_unique_filename(filename)
 
 def check_source(source):
