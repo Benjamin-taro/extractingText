@@ -1,8 +1,8 @@
 import sys
-from checkSource import check_source
-from urlFinder import urlFinder
-from textExtractor import text_extractor
-from saveOutput import saveOutput
+from extractingtext.checkSource import check_source
+from extractingtext.urlFinder import urlFinder
+from extractingtext.textExtractor import text_extractor
+from extractingtext.saveOutput import saveOutput
 
 def main():
     if len(sys.argv) != 2:
