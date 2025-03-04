@@ -9,6 +9,7 @@ This script allows us to extract text from pdf files. It supports three types of
 This script will extract text from each PDF and produce text files for each PDF file and store them in a folder named by the current date.
 
 # Project Structure
+```
 extractingtext/
 ├── extractingtext/            <-- Package folder
 │   ├── __init__.py
@@ -18,11 +19,12 @@ extractingtext/
 │   ├── save_output.py
 ├── main.py
 └── README.md
-
+```
 # Usage
 Run the script from the command line:
-''' bash
+``` bash
 python main.py <source>
+```
 where source should be one of the following:
 - A direct URL to a PDF (e.g., https://example.com/document.pdf).
 - A URL to a website that contains PDF links (e.g., https://example.com/articles).
