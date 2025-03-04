@@ -10,7 +10,6 @@ class saveOutput:
             os.makedirs(folder_name)
         return folder_name
     
-    @staticmethod
     def save(text):
         folder = saveOutput.get_output_folder()
         timestamp = datetime.datetime.now().strftime("%d%m%Y_%H%M%S")

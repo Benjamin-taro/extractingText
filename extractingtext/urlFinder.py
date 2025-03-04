@@ -3,7 +3,6 @@ from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 
 class urlFinder:
-    @staticmethod
     def get_pdf_links_from_website(url):
         try:
             response = requests.get(url)
