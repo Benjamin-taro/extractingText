@@ -3,15 +3,15 @@
 This script allows us to extract text from pdf files. It supports three types of sources:
 
 - Online PDF: A direct URL to a PDF file.
-- Local PDF: A locaal file path to a PDF.
-- Website: A URL to a website which is potentially containing links to PDF files.
+- Local PDF: A local file path to a PDF.
+- Website: A URL to a website which potentially contains links to PDF files.
 
 This script will extract text from each PDF and produce text files for each PDF file and store them in a folder named by the current date.
 
 # Project Structure
 ```
 extractingtext/
-├── extractingtext/            <-- Package folder
+├── extractingtext/
 │   ├── __init__.py
 │   ├── check_source.py
 │   ├── url_finder.py

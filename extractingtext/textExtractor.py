@@ -3,6 +3,7 @@ import io
 from PyPDF2 import PdfReader
 
 class text_extractor:
+    @staticmethod
     def extract_text(url, source_type):
         try:
             if(source_type == "online_pdf" or source_type == "website"):

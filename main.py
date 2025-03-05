@@ -10,19 +10,19 @@ def main():
         sys.exit(1)
     source = sys.argv[1]
     source_type = check_source.check(source)
-    print("Source type:", source_type)
     urls = []
     if source_type == "website":
         urls = urlFinder.get_pdf_links_from_website(source)
     else:
         urls.append(source)
+    print(urls)
     for url in urls:
         extracted_text = ""
         extracted_text += text_extractor.extract_text(url, source_type)
         if not extracted_text:
             print("No text extracted from", url)
             continue
-        saveOutput.save(extracted_text)
+        saveOutput.save(extracted_text, url)
 
 
 if __name__ == "__main__":

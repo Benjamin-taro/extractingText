@@ -10,10 +10,17 @@ class saveOutput:
             os.makedirs(folder_name)
         return folder_name
     
-    def save(text):
+    @staticmethod
+    def get_pdf_name(url):
+        pdf_name = url.split("/")[-1][:-4]
+        return pdf_name
+
+    @staticmethod 
+    def save(text, url):
         folder = saveOutput.get_output_folder()
         timestamp = datetime.datetime.now().strftime("%d%m%Y_%H%M%S")
-        filename = f"output_{timestamp}.txt"
+        pdf_name = saveOutput.get_pdf_name(url)
+        filename = f"{pdf_name}_{timestamp}.txt"
         filepath = os.path.join(folder, filename)
         try:
             with open(filepath, "w", encoding="utf-8") as file:
