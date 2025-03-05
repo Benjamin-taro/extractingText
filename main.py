@@ -15,6 +15,9 @@ def main():
         urls = urlFinder.get_pdf_links_from_website(source)
     else:
         urls.append(source)
+    if not urls:
+        print("No PDF links found in the source")
+        sys.exit(1)
     for url in urls:
         extracted_text = ""
         extracted_text += text_extractor.extract_text(url, source_type)
